@@ -1,9 +1,9 @@
-#ColorPicker & Gradient Generator
+# ColorPicker & Gradient Generator
 **MS ColorPicker** is a javaScript color picker that supports rgb, hsv, hsl, hex, CSS color names and alpha. It does not rely on any external library dependencies. It is based on the original work of John Dyer but has been rewritten to remove the Prototype library and extended significantly. 
 This library is not particularly lightweight, although it is possible to easily remove quite a few of the feature and source files (e.g. the library files). I wanted a library that I could use to do serious color work and provide a way to save my color and gradient selections for consistency across all my websites.
 These demos include functionality to optimized loading. Only two source files need be loaded up front. All the other will load independently. See my GitHub library for Javascript-Dynamic-Loading-and-Version-Control for documentation.
-##Overview
-###ColorPicker
+## Overview
+### ColorPicker
 - The Color Picker uses the familiar Photoshop-like interface.
 - Colors may be chosen using rgb, rgba, hsv (hsb), hex, hsl, hsla, and CSS color names.
 - Support for hsl has been added using color maps
@@ -15,7 +15,7 @@ These demos include functionality to optimized loading. Only two source files ne
 - Use the arrows keys to change the value of any numerical field.
 - Pinnable to the Gradient Generator
 
-###Gradient Generator
+### Gradient Generator
 - Generate gradients using rgb, rgba, hsl, hsla, and hex.
 - Familiar Photoshop-like interface.
 - Generate linear gradients specifying side, corner or angle.
@@ -30,16 +30,16 @@ These demos include functionality to optimized loading. Only two source files ne
 - Open multiple instances of the gradient generator.
 - Use the arrows keys to change the value of any numerical field.
 - Option to reverse the order of the color stops
-##Demos
+## Demos
 **gradient-demo.php** is actually two demos in one and contains most of the commonly used features.
 In the following demos, a minimum of two elements are updated by the ColorPicker  and Gradient Generator: The "target" is the "true" destination element. Also included is an optional div (it can be an input or label) to receive a text version of the color or gradient.
 1. **Simple Click to Open Demo** creates one div as a "front end." This can be an input, label, or div (as in this demo). This div will contain both the color chosen and the css string of the chosen color (or gradient). The Demo also gives a "target" div which the color is set for. An option is given to add as many additional divs as desired to test performance.
 This fully functional demo of the ColorPicker and Gradient Generator is available at http://design.mseifert.com/index.php?topid=1&grade=Gradient&topid=1
 2. **Dynamic Color Input Demo** creates a custom input control with a clickable arrow to open the tool. The input is automatically linked to the ColorPicker and Gradient Generator in a two way fashion. If a color is typed into the input, it is reflected immediately in the input as well as in any open tool. Supported formats for typed in text include Hex, RGB, and CSS Color Names.
 **gradient-demo-simple.php** includes the minimal features to get going and includes only the Click to Open demo from above.
-##Basic Documentation
+## Basic Documentation
 MS ColorPicker and Gradient Generator run within all major browsers from IE9+. Tested in Firefox, Chrome, Opera, Safari for Windows, Internet Explorer.
-###Implementation
+### Implementation
 The following code is from the simple demo.
 
 	    function openSelectedTool(input, targetId) {
