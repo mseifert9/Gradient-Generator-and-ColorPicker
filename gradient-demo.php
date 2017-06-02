@@ -77,7 +77,7 @@
 	    include "common.php" ;
 	?>
 	<!-- the css file is in php format so that image path information can be passed to it -->
-	<link rel="stylesheet" type="text/css" href="<?php echo realurl(STATIC_CSS_COMMON) . '/mseifert-common.css.php?static-img-common=' . realurl(STATIC_IMG_COMMON) . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . realurl(STATIC_JS_COMMON) ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo realurl(STATIC_CSS_COMMON) . '/mseifert-common.css.php?static-img-common=' . realurl(STATIC_IMG_COMMON) . '&static-site-root=' . realurl(STATIC_SITE_ROOT) . '&static-js-common=' . realurl(STATIC_JS_COMMON) ?>">
 	
 	<!-- supporting functions - TODO: remove those that are not used by this demo -->
 	<script src="<?php echo STATIC_JS_COMMON ?>/mseifert.js"></script>

@@ -1,4 +1,3 @@
-<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>	
@@ -40,43 +39,21 @@
 		padding: 5px;
 	    }
 	</style>
-	<script>
-	    // set up namespace both in js and php
-	    // the only globals placed in the namespace wiil be:
-	    //	    com.meifert, $msRoot, $ms
-	    //	    the openSelectedTool function defined in this file
-	    var com = com || {};
-	    $msRoot = com.mseifert = {common: {}};
-	    $ms = $msRoot.common;
-	    
-	    // set up path vars
-	    var root = window.location.origin ? window.location.origin : window.location.protocol + '//' + window.location.host;
-	    // one installation on the server can serve multiple domains
-	    // server may have multiple domains (SITEs) - 
-	    //	    TOP = uppermost domain in the domain tree (it can be the same as SITE)
-	    //	    SITE = the domain in the domain tree which this php is called from
-	    // STATIC can be a cookieless domain different from root - for this example, it will be the same
-	    $ms.STATIC_TOP_ROOT = root;			    // STATIC = cookieless domain address, TOP = top most domain on server, ROOT = root directory of TOP domain
-	    $ms.STATIC_SITE_ROOT = root;		    // STATIC = cookieless domain address, SITE = any domain in the tree, ROOT = root directory of SITE domain
-	    $ms.STATIC_IMG_COMMON = root + "/img-common";   // directory of images common to all SITEs
-	    $ms.STATIC_JS_COMMON = root + "/js-common";	    // directory of javascript files common to all SITEs
-	    $ms.STATIC_CSS_COMMON = root + "/css-common";   // directory of CSS files common to all SITEs
-	</script>
-	<?php
-	    $root = "http://" . (isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : '.'));
-	    define("STATIC_TOP_ROOT", $root);
-	    define("STATIC_SITE_ROOT", $root);
-	    define("STATIC_JS_COMMON", $root . "/js-common");
-	    define("STATIC_CSS_COMMON", $root . "/css-common");
-	    define("STATIC_IMG_COMMON", $root . "/img-common");
+	<?php 
+	    // common.php 
+	    //	    defines php path constants and js path variables
+	    //	    creates the js namespace where the paths are stored
+	    //	    contains basic error checking code - error.log in the demo directory will contain php errors
+	    include "common.php" ;
 	?>
+	
 	<!-- the css file is in php format so that image path information can be passed to it -->
-	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_CSS_COMMON . '/mseifert-common.css.php?static-img-common=' . STATIC_IMG_COMMON . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . STATIC_JS_COMMON ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo realurl(STATIC_CSS_COMMON) . '/mseifert-common.css.php?static-img-common=' . realurl(STATIC_IMG_COMMON) . '&static-site-root=' . realurl(STATIC_SITE_ROOT) . '&static-js-common=' . realurl(STATIC_JS_COMMON) ?>">
 	
 	<!-- only the following two javascript files need be explicitly loaded
 	All dependent javascript files will be loaded automatically
 	mseifert.js contains supporting functions (TODO: remove those that are not used by this demo) -->
-	<script src="<?php echo STATIC_JS_COMMON ?>/mseifert.js"></script>
+	<script src="<?php echo STATIC_JS_COMMON ?>/mseifert.min.js"></script>
 	
 	<!-- if you wish to load only the ColorPicker without the Gradient Generator, substitute colorpicker.js for gradient.js below -->
 	<script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/gradient.js"></script>
