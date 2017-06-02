@@ -79,6 +79,7 @@ The following HTML will open the ColorPicker or Gradient Generator (CSS styling 
 	<div id="target"></div>
 
 The following settings are configurable and can be passed to the ColorPicker or Gradient Generator
+```
 imgPath: 		// defaults to "/js-common/colorpicker/img",
 startMode		// defaults to hue (from hsv)
 startColor		// colors can be passed in the supported formats. 
@@ -98,7 +99,7 @@ allowGradient		// allow switching to the Gradient Generator
 gradient		// holds an instance of the Gradient Generator
 fromGradient		// flags when opened from the Gradient Generator
 minimal		// does nothing – considered having a flag to remove the color library
-
+```
 ###The Files:
 With the exception of gradient.js, all files originated from John Dyer's library. The Gradient Generator was written by me from the ground up except for the regex which parses the gradients. The parsing regex is from Dean Taylor from this StackOverflow post: 
 https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javascript-regex
