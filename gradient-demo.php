@@ -69,42 +69,15 @@
 		width: 50%;
 	    }
 	</style>
-	<script>
-	    // set up namespace both in js and php
-	    // the only globals placed in the namespace wiil be:
-	    //	    com.meifert, $msRoot, $ms
-	    //		- com.mseifert can be renamed to anything which doesn't conflict with your environment
-	    //		- $msRoot is a shortcut to com.mseifert
-	    //		- $ms is a shortcut to com.mseifert.common
-	    //	    the globals defined in this demo file (openTool, cpInput, cpInput)
-	    //	    the functions defined in this demo file (openSelectedTool, createInput, resetForm, resetElements, createdivs)
-	    var com = com || {};
-	    $msRoot = com.mseifert = {common: {}};
-	    $ms = $msRoot.common;
-	    
-	    // set up path vars
-	    var root = window.location.origin ? window.location.origin : window.location.protocol + '//' + window.location.host;
-	    // one installation on the server can serve multiple domains
-	    // server may have multiple domains (SITEs) - 
-	    //	    TOP = uppermost domain in the domain tree (it can be the same as SITE)
-	    //	    SITE = the domain in the domain tree which this php is called from
-	    // STATIC can be a cookieless domain different from root - for this example, it will be the same
-	    $ms.STATIC_TOP_ROOT = root;			    // STATIC = cookieless domain address, TOP = top most domain on server, ROOT = root directory of TOP domain
-	    $ms.STATIC_SITE_ROOT = root;		    // STATIC = cookieless domain address, SITE = any domain in the tree, ROOT = root directory of SITE domain
-	    $ms.STATIC_IMG_COMMON = root + "/img";   // directory of images common to all SITEs
-	    $ms.STATIC_JS_COMMON = root + "/js";	    // directory of javascript files common to all SITEs
-	    $ms.STATIC_CSS_COMMON = root + "/css";   // directory of CSS files common to all SITEs
-	</script>
-	<?php
-	    $root = "http://" . (isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : '.'));
-	    define("STATIC_TOP_ROOT", $root);
-	    define("STATIC_SITE_ROOT", $root);
-	    define("STATIC_JS_COMMON", $root . "/js");
-	    define("STATIC_CSS_COMMON", $root . "/css");
-	    define("STATIC_IMG_COMMON", $root . "/img");
+	<?php 
+	    // common.php 
+	    //	    defines php path constants and js path variables
+	    //	    creates the js namespace where the paths are stored
+	    //	    contains basic error checking code - error.log in the demo directory will contain php errors
+	    include "common.php" ;
 	?>
 	<!-- the css file is in php format so that image path information can be passed to it -->
-	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_CSS_COMMON . '/mseifert-common.css.php?static-img-common=' . STATIC_IMG_COMMON . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . STATIC_JS_COMMON ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo realurl(STATIC_CSS_COMMON) . '/mseifert-common.css.php?static-img-common=' . realurl(STATIC_IMG_COMMON) . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . realurl(STATIC_JS_COMMON) ?>">
 	
 	<!-- supporting functions - TODO: remove those that are not used by this demo -->
 	<script src="<?php echo STATIC_JS_COMMON ?>/mseifert.js"></script>
