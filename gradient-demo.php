@@ -104,33 +104,33 @@
 	    define("STATIC_IMG_COMMON", $root . "/img-common");
 	?>
 	<!-- the css file is in php format so that image path information can be passed to it -->
-	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_CSS_COMMON . '/mseifert-common.min.css.php?static-img-common=' . STATIC_IMG_COMMON . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . STATIC_JS_COMMON ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_CSS_COMMON . '/mseifert-common.css.php?static-img-common=' . STATIC_IMG_COMMON . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . STATIC_JS_COMMON ?>">
 	
 	<!-- supporting functions - TODO: remove those that are not used by this demo -->
 	<script src="<?php echo STATIC_JS_COMMON ?>/mseifert.js"></script>
 	
-	<!-- if you wish to load only the ColorPicker without the gradient generator, substitute colorpicker.min.js for gradient.min.js below -->
-	<script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/gradient.min.js"></script>
+	<!-- if you wish to load only the ColorPicker without the gradient generator, substitute colorpicker.js for gradient.js below -->
+	<script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/gradient.js"></script>
 
 <!--
 	    only two javascript files need be explicitly loaded:
-	        mseifert.min.js
-	        gradient.min.js (or colorpicker.min.js - if only the colorpicker is desired)
+	        mseifert.js
+	        gradient.js (or colorpicker.js - if only the colorpicker is desired)
 	    All dependent javascript files will be loaded automatically
 	    If you prefer to manually load all js files include the files below
 	    Plus you should also preload the default color map: map-hue.png
-	    <script src="<?php echo STATIC_JS_COMMON ?>/localdata.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/localfile.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/editable-combo.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/custom-dialog.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/dragdrop.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/draggable.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/droppable.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/slider.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colorlibrary.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colormethods.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colorvaluepicker.min.js"></script>
-	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colorpicker.min.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/localdata.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/localfile.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/editable-combo.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/custom-dialog.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/dragdrop.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/draggable.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/droppable.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/slider.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colorlibrary.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colormethods.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colorvaluepicker.js"></script>
+	    <script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/colorpicker.js"></script>
 -->
 
 	<script>

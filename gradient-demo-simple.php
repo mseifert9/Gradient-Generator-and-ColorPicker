@@ -71,15 +71,15 @@
 	    define("STATIC_IMG_COMMON", $root . "/img-common");
 	?>
 	<!-- the css file is in php format so that image path information can be passed to it -->
-	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_CSS_COMMON . '/mseifert-common.min.css.php?static-img-common=' . STATIC_IMG_COMMON . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . STATIC_JS_COMMON ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_CSS_COMMON . '/mseifert-common.css.php?static-img-common=' . STATIC_IMG_COMMON . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . STATIC_JS_COMMON ?>">
 	
 	<!-- only the following two javascript files need be explicitly loaded
 	All dependent javascript files will be loaded automatically
 	mseifert.js contains supporting functions (TODO: remove those that are not used by this demo) -->
 	<script src="<?php echo STATIC_JS_COMMON ?>/mseifert.js"></script>
 	
-	<!-- if you wish to load only the ColorPicker without the Gradient Generator, substitute colorpicker.min.js for gradient.min.js below -->
-	<script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/gradient.min.js"></script>
+	<!-- if you wish to load only the ColorPicker without the Gradient Generator, substitute colorpicker.js for gradient.js below -->
+	<script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/gradient.js"></script>
 
 	<script>
 	    function openSelectedTool(input, targetId) {
