@@ -34,8 +34,8 @@ These demos include functionality to optimized loading. Only two source files ne
 - Use the arrows keys to change the value of any numerical field.
 - Option to reverse the order of the color stops
 
-<img src="/img/gradient-generator-screenshow.jpg" />
-<img src="/img/colorpicker-screenshow.jpg" />
+<img src="/img/gradient-generator-screenshot.jpg" />
+<img src="/img/colorpicker-screenshot.jpg" />
 
 ## Demos
 **gradient-demo.php** is actually two demos in one and contains most of the commonly used features.
