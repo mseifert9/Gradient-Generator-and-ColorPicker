@@ -75,9 +75,10 @@ The following code is from the simple demo.
 		}
 	    }
 The following HTML will open the ColorPicker or Gradient Generator (CSS styling is needed)
+```
 	<div onclick="openSelectedTool(this, 'target')"></div>
 	<div id="target"></div>
-
+```
 The following settings are configurable and can be passed to the ColorPicker or Gradient Generator
 ```
 imgPath: 		// defaults to "/js-common/colorpicker/img",
