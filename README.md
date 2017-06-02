@@ -114,38 +114,38 @@ https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javasc
  -     creates and processes events for the data entry inputs and radio buttons.
 ###### colormethods.js
  - defines the Color class
- -    keeps the values for the current selected color
+ -     keeps the values for the current selected color
  - defines the colorMethods class
  -     contains all the calculations and conversion functions
 ###### colorlibrary.js
  - allows for saving of chosen colors (ColorPicker) or gradients (Gradient Generator)
 ###### localdata.js
  - defines the LocalData class
- -    support for colorlibrary.js to save libraries to localstorage.
+ -     support for colorlibrary.js to save libraries to localstorage.
 ###### localfile.js
  - defines the LocalFile class
- -    support for colorlibrary.js to export and import libraries to text files.
+ -     support for colorlibrary.js to export and import libraries to text files.
 ###### slider.js
  - defines the Slider class
- -    creates the sliders for the ColorPicker maps as well as sliders for numerical input fields (e.g. opacity)
+ -     creates the sliders for the ColorPicker maps as well as sliders for numerical input fields (e.g. opacity)
 ###### custom-dialog.js
  - defines the CustomDialog class
- -    handles custom user input prompts
+ -     handles custom user input prompts
 ###### editable-combo.js
  - defines the EditableCombo class
- -    a custom editable combox element used by colorlibrary.js
+ -     a custom editable combox element used by colorlibrary.js
 ###### dragdrop.js
  - defines the DragDrop class
- -    support for drag and drop of elements
+ -     support for drag and drop of elements
 ###### draggable.js
  - defines the Draggable class
- -    makes elements draggable
+ -     makes elements draggable
 ###### droppable.js
  - defines the Droppable class
- -    makes elements drop targets –able to receive draggable elements
+ -     makes elements drop targets –able to receive draggable elements
 ###### moddate.php
  - optional file for version checking of dynamically loaded js files
- -    For more information, see my GitHub library for [Javascript-Dynamic-Loading-and-Version-Control for documentation](https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control)
+ -     For more information, see my GitHub library for [Javascript-Dynamic-Loading-and-Version-Control for documentation](https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control)
 ###### .htaccess
  - optional file for version checking of dynamically loaded js files
- -    Contains a RewriteRule to filter out the timestamp in the filenames
+ -     Contains a RewriteRule to filter out the timestamp in the filenames
