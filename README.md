@@ -101,7 +101,7 @@ gradient		// holds an instance of the Gradient Generator
 fromGradient		// flags when opened from the Gradient Generator
 minimal		// does nothing – considered having a flag to remove the color library
 ```
-###The Files:
+### The Files:
 With the exception of gradient.js, all files originated from John Dyer's library. The Gradient Generator was written by me from the ground up except for the regex which parses the gradients. The parsing regex is from Dean Taylor from this StackOverflow post: 
 https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javascript-regex
 ###### colorPicker.js 
