@@ -1,7 +1,7 @@
 # ColorPicker & Gradient Generator
 **MS ColorPicker** is a javaScript color picker that supports rgb, hsv, hsl, hex, CSS color names and alpha. It does not rely on any external library dependencies. It is based on the original work of John Dyer but has been rewritten to remove the Prototype library and extended significantly. 
 This library is not particularly lightweight, although it is possible to easily remove quite a few of the feature and source files (e.g. the library files). I wanted a library that I could use to do serious color work and provide a way to save my color and gradient selections for consistency across all my websites.
-These demos include functionality to optimized loading. Only two source files need be loaded up front. All the other will load independently. See my GitHub library for Javascript-Dynamic-Loading-and-Version-Control for documentation.
+These demos include functionality to optimized loading. Only two source files need be loaded up front. All the other will load independently. See my GitHub library for [Javascript-Dynamic-Loading-and-Version-Control for documentation](https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control)
 ## Overview
 ### ColorPicker
 - The Color Picker uses the familiar Photoshop-like interface.
@@ -114,9 +114,9 @@ https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javasc
  - creates and processes events for the data entry inputs and radio buttons.
 ###### colormethods.js
  - defines the Color class
-	keeps the values for the current selected color
+ -  	keeps the values for the current selected color
  - defines the colorMethods class
-	contains all the calculations and conversion functions
+ - 	contains all the calculations and conversion functions
 ###### colorlibrary.js
  - allows for saving of chosen colors (ColorPicker) or gradients (Gradient Generator)
 ###### localdata.js
@@ -143,4 +143,9 @@ https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javasc
 ###### droppable.js
  - defines the Droppable class
  - makes elements drop targets –able to receive draggable elements
-
+###### moddate.php
+ - optional file for version checking of dynamically loaded js files
+ - For more information, see my GitHub library for [Javascript-Dynamic-Loading-and-Version-Control for documentation](https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control)
+###### .htaccess
+ - optional file for version checking of dynamically loaded js files
+ - Contains a RewriteRule to filter out the timestamp in the filenames

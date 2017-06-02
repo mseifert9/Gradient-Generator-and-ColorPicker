@@ -505,7 +505,7 @@ ms-gradient-degrees{
 }
 
 .ms-close-button{
-    background: url(<?php echo $staticJsCommon ?>/img-common/design-close.gif) no-repeat top right;
+    background: url(<?php echo $staticImgCommon ?>/design-close.gif) no-repeat top right;
     display: inline-block;
     width: 20px;
     height: 20px;

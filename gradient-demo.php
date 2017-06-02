@@ -77,10 +77,37 @@
 	    include "common.php" ;
 	?>
 	<!-- the css file is in php format so that image path information can be passed to it -->
-	<link rel="stylesheet" type="text/css" href="<?php echo realurl(STATIC_CSS_COMMON) . '/mseifert-common.css.php?static-img-common=' . realurl(STATIC_IMG_COMMON) . '&static-site-root=' . realurl(STATIC_SITE_ROOT) . '&static-js-common=' . realurl(STATIC_JS_COMMON) ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo realurl(STATIC_CSS_COMMON) . '/mseifert-common.min.css.php?static-img-common=' . realurl(STATIC_IMG_COMMON) . '&static-site-root=' . realurl(STATIC_SITE_ROOT) . '&static-js-common=' . realurl(STATIC_JS_COMMON) ?>">
 	
 	<!-- supporting functions - TODO: remove those that are not used by this demo -->
 	<script src="<?php echo STATIC_JS_COMMON ?>/mseifert.js"></script>
+
+	<script>
+	    /*  VERSION CHECKING of js files
+	     *	To turn on optional javascript file version checking
+	     *	1) uncomment the code below => $ms.sourceFiles.doVersionChecking( ...
+	     *	    This will make sure the browser cache has the newest js versions
+	     *	2)  replace the two js definitions in this file
+	     *		src="<?php echo STATIC_JS_COMMON ?>/mseifert.min.js">
+	     *		src="<?php echo STATIC_JS_COMMON ?>/colorpicker/gradient.js"
+	     *	    with
+	     *		src="<?php echo version(STATIC_JS_COMMON, "/mseifert.min.js") ?>"
+	     *		src="<?php echo version(STATIC_JS_COMMON, "/colorpicker/gradient.js") ?>"
+	     */
+		
+	    /* check file times to manage js file versions for dynamically loaded files (files not explicitly loaded by php)
+	     * requires moddata.php be installed in the root of the project
+	     * requires .htacess RewriteRule be added to filter out the timestamp in the filenames (see attached .htaccess file)
+	     * see github project for furhter information: https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control
+	     */	    
+	    /*
+	    $ms.sourceFiles.doVersionChecking([
+		// specify url of directories to read file times for
+		$ms.STATIC_JS_COMMON,
+		$ms.STATIC_JS_COMMON + "/colorpicker"
+	    ]);
+	    */
+	</script>
 	
 	<!-- if you wish to load only the ColorPicker without the gradient generator, substitute colorpicker.js for gradient.js below -->
 	<script src="<?php echo STATIC_JS_COMMON ?>/colorpicker/gradient.js"></script>
