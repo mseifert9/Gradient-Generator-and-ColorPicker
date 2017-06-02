@@ -91,17 +91,17 @@
 	    // STATIC can be a cookieless domain different from root - for this example, it will be the same
 	    $ms.STATIC_TOP_ROOT = root;			    // STATIC = cookieless domain address, TOP = top most domain on server, ROOT = root directory of TOP domain
 	    $ms.STATIC_SITE_ROOT = root;		    // STATIC = cookieless domain address, SITE = any domain in the tree, ROOT = root directory of SITE domain
-	    $ms.STATIC_IMG_COMMON = root + "/img-common";   // directory of images common to all SITEs
-	    $ms.STATIC_JS_COMMON = root + "/js-common";	    // directory of javascript files common to all SITEs
-	    $ms.STATIC_CSS_COMMON = root + "/css-common";   // directory of CSS files common to all SITEs
+	    $ms.STATIC_IMG_COMMON = root + "/img";   // directory of images common to all SITEs
+	    $ms.STATIC_JS_COMMON = root + "/js";	    // directory of javascript files common to all SITEs
+	    $ms.STATIC_CSS_COMMON = root + "/css";   // directory of CSS files common to all SITEs
 	</script>
 	<?php
 	    $root = "http://" . (isset($_SERVER["HTTP_HOST"]) ? $_SERVER["HTTP_HOST"] : (isset($_SERVER["SERVER_NAME"]) ? $_SERVER["SERVER_NAME"] : '.'));
 	    define("STATIC_TOP_ROOT", $root);
 	    define("STATIC_SITE_ROOT", $root);
-	    define("STATIC_JS_COMMON", $root . "/js-common");
-	    define("STATIC_CSS_COMMON", $root . "/css-common");
-	    define("STATIC_IMG_COMMON", $root . "/img-common");
+	    define("STATIC_JS_COMMON", $root . "/js");
+	    define("STATIC_CSS_COMMON", $root . "/css");
+	    define("STATIC_IMG_COMMON", $root . "/img");
 	?>
 	<!-- the css file is in php format so that image path information can be passed to it -->
 	<link rel="stylesheet" type="text/css" href="<?php echo STATIC_CSS_COMMON . '/mseifert-common.css.php?static-img-common=' . STATIC_IMG_COMMON . '&static-site-root=' . STATIC_SITE_ROOT . '&static-js-common=' . STATIC_JS_COMMON ?>">

@@ -12,9 +12,9 @@ $msRoot.EditableCombo = (function(options, settings){
 	listenWindowClick: false	// true: will close combo select options with click to any window element (not captured by the combo)
     }
     
-    var arrowImage = $ms.STATIC_TOP_ROOT + '/img-common/design-combo-arrow.gif'; // Regular arrow
-    var arrowImageOver = $ms.STATIC_TOP_ROOT + '/img-common/design-combo-arrow-over.gif'; // Mouse over
-    var arrowImageDown = $ms.STATIC_TOP_ROOT + '/img-common/design-combo-arrow-down.gif'; // Mouse down
+    var arrowImage = $ms.STATIC_IMG_COMMON + '/design-combo-arrow.gif'; // Regular arrow
+    var arrowImageOver = $ms.STATIC_IMG_COMMON + '/design-combo-arrow-over.gif'; // Mouse over
+    var arrowImageDown = $ms.STATIC_IMG_COMMON + '/design-combo-arrow-down.gif'; // Mouse down
     var nextComboId = 0;
     var currentlyOpenedOptionBox = false;
     var editableCombo_activeArrow = false;

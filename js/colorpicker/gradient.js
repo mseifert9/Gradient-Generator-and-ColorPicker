@@ -8,7 +8,7 @@ $msRoot.Gradient = (function (settings) {
 	startColor: "",
 	newGradient: "rgb(255,255,255)",	// default new gradient
 	newLayer: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%)",	// default new gradient layer
-	imgPath: $ms.STATIC_TOP_ROOT + "/js-common/colorpicker/img",
+	imgPath: $ms.STATIC_JS_COMMON + "/colorpicker/img",
 	target: undefined,	// an array of elements to update when values change
 	top: "100px",
 	left: "100px",
@@ -32,7 +32,7 @@ $msRoot.Gradient = (function (settings) {
 	{file: "dragdrop.min.js", ns: "DragDrop"},
 	{file: "slider.min.js", ns: "Slider"},
 	{file: "colorpicker.min.js", ns: "ColorPicker", subDir: "colorpicker"},
-	{file: "colorlibrary.min.js", ns: "ColorPicker.ColorLibrary", subDir: "colorpicker"},	    // dir: "js-common"
+	{file: "colorlibrary.min.js", ns: "ColorPicker.ColorLibrary", subDir: "colorpicker"},
     ]
     $ms.sourceFiles.add(dependants);
     $ms.sourceFiles.load();

@@ -20,7 +20,7 @@ $msRoot.ColorPicker = (function (settings) {
     var instance = [];
     var instanceCounter = 0;
     var defaultSettings = {
-	imgPath: $ms.STATIC_TOP_ROOT + "/js-common/colorpicker/img",
+	imgPath: $ms.STATIC_JS_COMMON + "/colorpicker/img",
 	startMode: 'h',
 	startColor: '',
 	startPos: undefined,

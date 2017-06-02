@@ -2018,7 +2018,7 @@ $ms = $msRoot.common = function () {
 
 	// attach color slider
 	// target is the control to hold the color values
-	var pslider = new $msRoot.Slider(bar, {xMinValue: 1, xMaxValue: max, yMinValue: 1, yMaxValue: 1, arrowImage: $ms.STATIC_TOP_ROOT + '/img-common/slider.gif', 
+	var pslider = new $msRoot.Slider(bar, {xMinValue: 1, xMaxValue: max, yMinValue: 1, yMaxValue: 1, arrowImage: $ms.STATIC_IMG_COMMON + '/slider.gif', 
 	    container: sliderContainer, direction: "horizontal", target: prop.inputId, snapX: snapX, parentClass: _this});
 
 	pslider.onValuesChanged = function () {
