@@ -109,7 +109,7 @@ https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javasc
  -     creates the user interface and controls the workflow for the ColorPicker
 ###### gradient.js
  - defines the Gradientclass
- -      contains all the code for the Gradient Generator
+ -      contains all the code for the Gradient Generator.
 ###### colorvaluepicker.js 
  - defines the ColorValuePicker class
  -     creates and processes events for the data entry inputs and radio buttons.
