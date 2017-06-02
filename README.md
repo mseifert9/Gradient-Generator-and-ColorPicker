@@ -104,43 +104,43 @@ minimal		// does nothing – considered having a flag to remove the color librar
 ###The Files:
 With the exception of gradient.js, all files originated from John Dyer's library. The Gradient Generator was written by me from the ground up except for the regex which parses the gradients. The parsing regex is from Dean Taylor from this StackOverflow post: 
 https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javascript-regex
-colorPicker.js 
-    - defines the ColorPicker class
-    - creates the user interface and controls the workflow for the ColorPicker
-gradient.js is an all in one file for the Gradient Generator
-    - defines the Gradientclass
-colorvaluepicker.js 
-    - defines the ColorValuePicker class
-    - creates and processes events for the data entry inputs and radio buttons.
-colormethods.js
-    - defines the Color class
+###### colorPicker.js 
+ - defines the ColorPicker class
+ - creates the user interface and controls the workflow for the ColorPicker
+###### gradient.js is an all in one file for the Gradient Generator
+ - defines the Gradientclass
+###### colorvaluepicker.js 
+ - defines the ColorValuePicker class
+ - creates and processes events for the data entry inputs and radio buttons.
+###### colormethods.js
+ - defines the Color class
 	keeps the values for the current selected color
-    - defines the colorMethods class
+ - defines the colorMethods class
 	contains all the calculations and conversion functions
-colorlibrary.js
-    - allows for saving of chosen colors (ColorPicker) or gradients (Gradient Generator)
-localdata.js
-    - defines the LocalData class
-    - support for colorlibrary.js to save libraries to localstorage.
-localfile.js
-    - defines the LocalFile class
-    - support for colorlibrary.js to export and import libraries to text files.
-slider.js
-    - defines the Slider class
-    - creates the sliders for the ColorPicker maps as well as sliders for numerical input fields (e.g. opacity)
-custom-dialog.js
-    - defines the CustomDialog class
-    - handles custom user input prompts
-editable-combo.js
-    - defines the EditableCombo class
-    - a custom editable combox element used by colorlibrary.js
-dragdrop.js
-    - defines the DragDrop class
-    - support for drag and drop of elements
-draggable.js
-    - defines the Draggable class
-    - makes elements draggable
-droppable.js
-    - defines the Droppable class
-    - makes elements drop targets –able to receive draggable elements
+###### colorlibrary.js
+ - allows for saving of chosen colors (ColorPicker) or gradients (Gradient Generator)
+###### localdata.js
+ - defines the LocalData class
+ - support for colorlibrary.js to save libraries to localstorage.
+###### localfile.js
+ - defines the LocalFile class
+ - support for colorlibrary.js to export and import libraries to text files.
+###### slider.js
+ - defines the Slider class
+ - creates the sliders for the ColorPicker maps as well as sliders for numerical input fields (e.g. opacity)
+###### custom-dialog.js
+ - defines the CustomDialog class
+ - handles custom user input prompts
+###### editable-combo.js
+ - defines the EditableCombo class
+ - a custom editable combox element used by colorlibrary.js
+###### dragdrop.js
+ - defines the DragDrop class
+ - support for drag and drop of elements
+###### draggable.js
+ - defines the Draggable class
+ - makes elements draggable
+###### droppable.js
+ - defines the Droppable class
+ - makes elements drop targets –able to receive draggable elements
 
