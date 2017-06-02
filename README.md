@@ -148,4 +148,4 @@ https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javasc
  -     For more information, see my GitHub library for [Javascript-Dynamic-Loading-and-Version-Control for documentation](https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control)
 ###### .htaccess
  - optional file for version checking of dynamically loaded js files
- -     Contains a RewriteRule to filter out the timestamp in the filenames
+      Contains a RewriteRule to filter out the timestamp in the filenames
