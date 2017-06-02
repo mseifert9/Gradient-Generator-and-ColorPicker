@@ -104,43 +104,43 @@ minimal		// does nothing – considered having a flag to remove the color librar
 ###The Files:
 With the exception of gradient.js, all files originated from John Dyer's library. The Gradient Generator was written by me from the ground up except for the regex which parses the gradients. The parsing regex is from Dean Taylor from this StackOverflow post: 
 https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javascript-regex
-•	colorPicker.js 
-o	defines the ColorPicker class
+ - colorPicker.js 
+ -    defines the ColorPicker class
 o	creates the user interface and controls the workflow for the ColorPicker
-•	gradient.js is an all in one file for the Gradient Generator
+- gradient.js is an all in one file for the Gradient Generator
 o	defines the Gradientclass
-•	colorvaluepicker.js 
+- colorvaluepicker.js 
 o	defines the ColorValuePicker class
 o	creates and processes events for the data entry inputs and radio buttons.
-•	colormethods.js
+- colormethods.js
 o	defines the Color class
 	keeps the values for the current selected color
 o	defines the colorMethods class
 	contains all the calculations and conversion functions
-•	colorlibrary.js
+- colorlibrary.js
 o	allows for saving of chosen colors (ColorPicker) or gradients (Gradient Generator)
-•	localdata.js
+- localdata.js
 o	defines the LocalData class
 o	support for colorlibrary.js to save libraries to localstorage.
-•	localfile.js
+- localfile.js
 o	defines the LocalFile class
 o	support for colorlibrary.js to export and import libraries to text files.
-•	slider.js
+- slider.js
 o	defines the Slider class
 o	creates the sliders for the ColorPicker maps as well as sliders for numerical input fields (e.g. opacity)
-•	custom-dialog.js
+- custom-dialog.js
 o	defines the CustomDialog class
 o	handles custom user input prompts
-•	editable-combo.js
+- editable-combo.js
 o	defines the EditableCombo class
 o	a custom editable combox element used by colorlibrary.js
-•	dragdrop.js
+- dragdrop.js
 o	defines the DragDrop class
 o	support for drag and drop of elements
-•	draggable.js
+- draggable.js
 o	defines the Draggable class
 o	makes elements draggable
-•	droppable.js
+- droppable.js
 o	defines the Droppable class
 o	makes elements drop targets –able to receive draggable elements
 
