@@ -34,8 +34,9 @@ These demos include functionality to optimized loading. Only two source files ne
 - Use the arrows keys to change the value of any numerical field.
 - Option to reverse the order of the color stops
 
-<img src="/img/gradient-generator-screenshow.jpg">
-<img src="/img/colorpicker-screenshow.jpg">
+<img src="/img/gradient-generator-screenshot.jpg" />
+<img src="/img/colorpicker-screenshot.jpg" />
+
 ## Demos
 **gradient-demo.php** is actually two demos in one and contains most of the commonly used features.
 In the following demos, a minimum of two elements are updated by the ColorPicker  and Gradient Generator: The "target" is the "true" destination element. Also included is an optional div (it can be an input or label) to receive a text version of the color or gradient.
@@ -45,6 +46,7 @@ This fully functional demo of the ColorPicker and Gradient Generator is availabl
 **gradient-demo-simple.php** includes the minimal features to get going and includes only the Click to Open demo from above.
 ## Basic Documentation
 MS ColorPicker and Gradient Generator run within all major browsers from IE9+. Tested in Firefox, Chrome, Opera, Safari for Windows, Internet Explorer.
+
 ### Implementation
 The following code is from the simple demo.
 
