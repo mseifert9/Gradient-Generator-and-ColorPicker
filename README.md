@@ -1,4 +1,5 @@
 # ColorPicker & Gradient Generator
+b
 **MS Gradient Generator** is a full featured javascript gradient generator that supports rgb, rgba, hsl, hsla, and hex. It uses a familiar Photoshop-like interface and supports multiple transparent gradient layers.
 
 **MS ColorPicker** is a javaScript color picker that supports rgb, hsv, hsl, hex, CSS color names and alpha. It does not rely on any external library dependencies. It is based on the original work of John Dyer but has been rewritten to remove the Prototype library and extended significantly. 
