@@ -1,4 +1,3 @@
-aaaa
 # ColorPicker & Gradient Generator
 **MS Gradient Generator** is a full featured javascript gradient generator that supports rgb, rgba, hsl, hsla, and hex. It uses a familiar Photoshop-like interface and supports multiple transparent gradient layers.
 
