@@ -158,3 +158,63 @@ https://stackoverflow.com/questions/20215440/parse-css-gradient-rule-with-javasc
 ###### .htaccess
  - optional file for version checking of dynamically loaded js files
  -     Contains a RewriteRule to filter out the timestamp in the filenames
+
+## The Namespace
+This project uses the com.mseifert javascript namespace. In addition to the namespace, two global variables are used as shortcuts:
+``` 
+    $msRoot = com.mseifert
+    $ms = $msRoot.common
+```
+These variables are defined first in `common.php` so that the path variables are immediately available. These variable are defined again  in mseifert-sourcefiles.js. This second definition will keep existing properties and add to them using the nifty `getChildClasses` function.
+
+## The Path Variables
+`common.php` contains the definitions for path variables.
+```
+    /* 
+     * javascript: URL paths must be defined
+     * php: URL and absolute (FULL) paths must be defined
+     * LINK_ paths are the urls for the cookie enabled domains - e.g. http://design.mseifert.com/demo
+     * STATIC_ paths are the urls for the cookieless domains (can be the same as LINK_ if there is not a separate cookieless domain) - 
+     *    e.g. http://staticdesign.mseifert.com/demo
+     * FULL_ paths are the absolute paths which correspond to the urls - e.g. "/home/yourid/public_html/design/demo"
+     * FULL_TOP_ROOT and STATIC_TOP_ROOT are the root of the Server in the domain tree (absolute and url respectively)
+     * FULL_SITE_ROOT and STATIC_SITE_ROOT are the root of the Site (domain).
+     *	  if there is only one domain on the server, 
+     *	  SITE_ROOT and TOP_ROOT paths will be the same
+     *	  having both SITE_ROOT and TOP_ROOT defined allows pulling files from anywhere on the server for any of its site
+     *	  in other words, it allows different sites to share images, js, and css resources
+     * STATIC_IMG_COMMON, STATIC_CSS_COMMON, STATIC_JS_COMMON are default url subdirectories - e.g. http://static-design/demo/img
+     * 	  FULL_IMG_COMMON, FULL_CSS_COMMON, FULL_JS_COMMON are the absolute equivalents
+     * if root paths are left blank and only sub directories are specified for STATIC_JS_COMMON, STATIC_CSS_COMMON, STATIC_IMG_COMMON
+     *	  the current directory will be used as the relative root for all paths. This is the default.
+     */
+<?php     
+    define("LINK_TOP_ROOT", "");
+    define("LINK_SITE_ROOT", "");
+    define("STATIC_TOP_ROOT", "");
+    define("STATIC_SITE_ROOT", "");
+    define("STATIC_IMG_COMMON", "img");
+    define("STATIC_JS_COMMON", "js");
+    define("STATIC_CSS_COMMON", "css");
+    define("FULL_TOP_ROOT", "");
+    define("FULL_SITE_ROOT", "");
+    define("FULL_IMG_COMMON", "");
+    define("FULL_JS_COMMON", "");
+    define("FULL_CSS_COMMON", "");
+?>
+<script>
+    // create the namespace
+    var com = com || {};
+    com.mseifert = com.mseifert || {common: {}};
+    $msRoot = com.mseifert;
+    $ms = $msRoot.common;
+    // define url paths for javascript
+    $ms.LINK_TOP_ROOT = "";
+    $ms.LINK_SITE_ROOT = "";
+    $ms.STATIC_TOP_ROOT = "";
+    $ms.STATIC_SITE_ROOT = "";
+    $ms.STATIC_IMG_COMMON = "img";
+    $ms.STATIC_JS_COMMON = "js";
+    $ms.STATIC_CSS_COMMON = "css";
+</script>
+```
