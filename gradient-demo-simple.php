@@ -13,7 +13,7 @@
 	    }
 	    .chosen-color{
 		width: 380px;
-		height: 36px;
+		height: 45px;
 		border: 1px solid black;
 		margin: 5px 0 10px 5px;
 		background: white;
@@ -64,7 +64,7 @@
 		
 		var property = "background";
 		var startColor = "";
-		var tool = "colorpicker";
+		var tool = "gradient";	// gradient or colorpicker
 		if (input.style.backgroundImage.indexOf("gradient") !== -1) {
 		    tool = "gradient";
 		    startColor = input.style.backgroundImage;
@@ -80,7 +80,6 @@
 		    {element: input, property: property, valueAttribute: "innerHTML", textColor: "contrast"}
 		];
 		var settings = {
-		    minimal: false,
 		    target: targetElements,
 		    startColor: startColor,
 		    allowGradient: true	    // show "Add Gradient" option in color picker, If the source has a gradient, will open the gradient tool automatically
@@ -100,7 +99,7 @@
 	    MS Gradient Generator Demo (Simple)
 	</div>
 	<div id="demo1">
-	    <h2>Click Below To Open the<br>ColorPicker or Gradient Generator</h2>
+	    <h3>Click Below To Open the Gradient Generator</h3>
 	    <div id="open-on-click" class="chosen-color"  onclick="openSelectedTool(this, 'target')"></div>
 	</div>
     </div>

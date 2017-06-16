@@ -975,7 +975,7 @@ $ms = $msRoot.common = function () {
 	    // othertransform allows multiple transforms to be done at once. 
 	    // They can't be done separately as one overrides the other
 	    othertransform = " " + othertransform;
-	    othertransform = othertransform.trim;
+	    othertransform = othertransform.trim();
 	    var transform = 'scale(' + setting + ')' + othertransform;
 	    element.style.transform = transform;
 	    element.style['-o-transform'] = transform;
@@ -2660,6 +2660,7 @@ $ms = $msRoot.common = function () {
 	    startGradient: "",		// for gradient
 	    parentNode: document.body,
 	    divClassName: "",
+	    input: undefined,
 	    inputClassName: "",
 	    inputWidth: "100px",
 	    inputHeight: undefined,
@@ -2676,13 +2677,21 @@ $ms = $msRoot.common = function () {
 	// display colorpicker with a button press
 	var div = document.createElement("div");
 	div.className = settings.divClassName;
-	var input = document.createElement('input');
-	// button is set to 16px in css .ms-button-tool
-	input.style.width = parseInt(settings.inputWidth) - 16 + "px";
-	if (settings.inputHeight){
-	    input.style.height = parseInt(settings.inputHeight) + "px";
+	if (settings.input){
+	    input = settings.input;
+	} else {
+	    var input = document.createElement('input');
+	    // button is set to 16px in css .ms-button-tool
+	    if (settings.inputWidth){
+		input.style.width = parseInt(settings.inputWidth) - 16 + "px";
+	    }
+	    if (settings.inputHeight){
+		input.style.height = parseInt(settings.inputHeight) + "px";
+	    }
 	}
-	input.className = settings.inputClassName;
+	if (input.className){
+	    input.className = settings.inputClassName;
+	}
 	div.appendChild(input);    
 	if (!settings.parentNode){
 	    settings.parentNode = document.body;  
@@ -2809,12 +2818,26 @@ $ms = $msRoot.common = function () {
 		    settings.element.style.removeProperty("color");
 		}
 	    }
+	    
+	    // determine which tool is open
+	    var tool;
+	    for (var i = 0; i < settings.tool.length; i++){
+		// test for visible is offsetParent === null
+		if (settings.tool[i].offsetParent !== null){
+		    tool = settings.tool[i];
+		    break;
+		}
+	    }
+	    if (!tool) {
+		return;
+	    }
+	    
 	    if (settings.cbChange) {
-		settings.cbChange(settings.tool);
+		settings.cbChange(tool);
 	    }
 	    if (!remove){
 		// only update the colorpicker / gradient if value is valid and if appended to document
-		if (settings.tool && settings.tool.container.parentNode){
+		if (tool.container.parentNode){
 		    if (settings.tool.indexOf("colorpicker")){
 			// colorpicker tool
 			settings.tool.setColor(color)

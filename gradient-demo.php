@@ -47,24 +47,6 @@
 		bottom: 0;
 		left: 200px;
 	    }
-	    input[type="radio"] + label {
-		color:black;
-		font-family:Arial, sans-serif;
-		display: inline-block;
-	    }
-
-	    input[type="radio"] + label span {
-		display:inline-block;
-		width:19px;
-		height:19px;
-		margin:-2px 10px 0 0;
-		vertical-align:middle;
-		cursor:pointer;
-	    }
-
-	    input[type="radio"]:checked + label span {
-		/* background: ; */
-	    }    
 	    .cw50{
 		width: 50%;
 	    }
