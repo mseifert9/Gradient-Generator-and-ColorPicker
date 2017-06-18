@@ -1458,8 +1458,8 @@ $ms = $msRoot.common = function () {
 	//just add the current scrolling position to the top and left properties 
 	//(these can be obtained using window.scrollX and window.scrollY) 
 	var rect = element.getBoundingClientRect();
-	var posX = rect.left + window.pageXOffset;	    // window.scrollX;
-	var posY = rect.top + window.pageYOffset;	    //window.scrollY;	
+	var posX = rect.left + window.pageXOffset;	    // alias for window.scrollX; 
+	var posY = rect.top + window.pageYOffset;	    // alias for window.scrollY;	
 
 	return {x: posX, y: posY, left: posX, top: posY, width: rect.width, height: rect.height};
     }
@@ -2759,8 +2759,11 @@ $ms = $msRoot.common = function () {
 	    } else {
 		settings.startColor = input.style.background;
 	    }
+	    // open tool below and offset half way to the right of the input
+	    var rect = $ms.getOffset(input);
+	    settings.startPos = {top: rect.top + rect.height, left: rect.left + 20};
 	    /*
-	     * Create the colorpicker or gradient
+	     * Create the colorpicker or gradient generator
 	     */
 	    if (openGradient){
 		new $msRoot.Gradient(settings);
