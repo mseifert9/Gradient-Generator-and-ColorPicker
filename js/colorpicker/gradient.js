@@ -8,7 +8,7 @@ $msRoot.Gradient = (function (settings) {
 	startColor: "",
 	newGradient: "rgb(255,255,255)",	// default new gradient
 	newLayer: "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%)",	// default new gradient layer
-	imgPath: $ms.STATIC_JS_COMMON + "/colorpicker/img",
+	imgpath: $ms.STATIC_JS_COMMON + "/colorpicker/img",
 	target: undefined,	// an array of elements to update when values change
 	top: "100px",
 	left: "100px",
@@ -32,7 +32,7 @@ $msRoot.Gradient = (function (settings) {
 	{file: "dragdrop.min.js", ns: "DragDrop"},
 	{file: "slider.min.js", ns: "Slider"},
 	{file: "colorpicker.min.js", ns: "ColorPicker", subDir: "colorpicker"},
-	{file: "colorlibrary.min.js", ns: "ColorPicker.ColorLibrary", subDir: "colorpicker"},
+	{file: "colorlibrary.min.js", ns: "ColorPicker.ColorLibrary", subDir: "colorpicker"},	    // dir: "js-common"
     ]
     $ms.sourceFiles.add(dependants);
     $ms.sourceFiles.load();
@@ -338,6 +338,10 @@ $msRoot.Gradient = (function (settings) {
 	
 	if (!aGradient || aGradient.length == 0) {
 	    this.showGradientFromColor("rgba(255, 255, 255, 1)");
+	    if (this.tab == 3){
+		// invalid import
+		alert("Couldn't parse the gradient CSS.");
+	    }
 	    return;
 	}
 	// create new gradient in first layer
@@ -732,7 +736,7 @@ $msRoot.Gradient = (function (settings) {
 	td.appendChild(buttonDeleteColorStop);
 
 	var divTabContainer  = this.createTabs(["Preview", "CSS", "Layers", "Import"]);
-	divTabContainer.id = this.id + "tab-container";
+	divTabContainer.id = this.id +  "tab-container";
 	$ms.addClass(divTabContainer, "ms-gradient-tab-container");
 	divLeftOuter.appendChild(divTabContainer);
 	
@@ -1807,6 +1811,24 @@ $msRoot.Gradient = (function (settings) {
      * filter: progid:DXImageTransform.Microsoft.gradient( startGradientstr='#919191', endColorstr='#82919191',GradientType=0 );    - IE6-9 => won't be read in this program but can generate css)
      * 
      */
+    /*	
+	var regex = /(?:\s*)(?:linear|radial)-gradient\s*\(((?:\([^\)]*\)|[^\)\(]*)*)\)/g;
+	(?:\s*)							space(s)
+	(?:linear|radial)-gradient		linear-gradient or radial-gradient
+	\s*								space(s)
+	\(								opening paren
+	(								capturing group
+	    (?:							non-capturing group
+									1st Alternative
+		    \(						left paren
+		    [^\)]*					all characters not right paren
+		    \)						right paren
+		|						OR
+		    [^\)\(]					Single Char not right or left paren
+	    )*							Matches zero+ giving back / greedy
+	)
+	\)								Ending paren
+    */    
    Gradient.prototype.getParsedGradient =function(gradientString){
        var gradient;
 	var aGradient = [];
@@ -1814,7 +1836,7 @@ $msRoot.Gradient = (function (settings) {
 	if (!gradientString || gradientString.length == 0 || gradientString.indexOf("gradient(") == -1) {
 	    return [];
 	}
-	var regex = /(?:\s*)(?:linear|radial)-gradient\s*\(((?:\([^\)]*\)|[^\)\(]*)*)\)/g;
+	var regex = /(?:\s*)(?:linear|radial)-gradient\s*\(((?:\([^\)]*\)|[^\)\(])*)\)/g;
 	
 	var match;
 	while (match = regex.exec(gradientString)){
@@ -1847,6 +1869,13 @@ $msRoot.Gradient = (function (settings) {
 		// gradient.colorStop[i].position	    - stop position percentage (including percent sign)
 		var parsed = parseGradient(regExpLib, match[1]);
 		if (parsed){
+		    // radial gradient error checking
+		    if (!parsed.direction && gradient.indexOf("radial") !== -1){
+			// direction is not supported - add default direction
+			parsed.direction = "radial";
+			parsed.radialDirection = "ellipse at center";
+			parsed.string = "ellipse at center" + parsed.string;
+		    }
 		    // add extended info for ease of processing
 		    for (var i = 0; i < parsed.colorStop.length; i++){
 			// note: parsed.colorStop[i].color can be hex or rgbString
