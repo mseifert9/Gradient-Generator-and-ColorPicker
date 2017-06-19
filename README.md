@@ -3,7 +3,8 @@
 
 **ColorPicker** is a javaScript color picker that supports rgb, hsv, hsl, hex, CSS color names and alpha. It does not rely on any external library dependencies. It is based on the original work of John Dyer but has been rewritten to remove the Prototype library and extended significantly. 
 
-A live demo of the Colorpicker and Gradient Generator can be found on [my website](http://design.mseifert.com/index.php?topid=1&grade=Gradient&topid=1)
+A live demo of the Colorpicker and Gradient Generator can be found on [my website](http://design.mseifert.com/index.php?topid=1&grade=Gradient&topid=1).
+
 The source to this project can be found [on Github](https://github.com/mseifert9/Gradient-Generator-and-ColorPicker)
 
 The demos include functionality for optimized loading. Only two source files need be loaded up front. All the other will load independently. See my GitHub library for [Javascript-Dynamic-Loading-and-Version-Control for documentation](https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control)
