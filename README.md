@@ -5,6 +5,9 @@
 
 The demos include functionality for optimized loading. Only two source files need be loaded up front. All the other will load independently. See my GitHub library for [Javascript-Dynamic-Loading-and-Version-Control for documentation](https://github.com/mseifert9/Javascript-Dynamic-Loading-and-Version-Control)
 
+A live demo can be found on my website](http://design.mseifert.com/index.php?topid=1&grade=Gradient&topid=1)
+The source to this project can be found [on Github](https://github.com/mseifert9/Gradient-Generator-and-ColorPicker)
+
 ## Overview
 ### ColorPicker
 - The Color Picker uses the familiar Photoshop-like interface.
