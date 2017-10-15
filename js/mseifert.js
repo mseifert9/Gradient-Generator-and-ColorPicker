@@ -1,4 +1,4 @@
-/* Copyright © 2017 Michael Seifert (www.mseifert.com) All Rights Reserved */
+/* Copyright © 2017 Michael Seifert (mseifert.com) All Rights Reserved */
 
 /*  
  * Array.last()
@@ -1557,7 +1557,16 @@ $ms = $msRoot.common = function () {
 	    // only overwrite those settings which are set
 	    for (var setting in passedSettings) {
 		if (passedSettings.hasOwnProperty(setting)) {
-		    thisSettings[setting] = passedSettings[setting];
+		    if (typeof passedSettings[setting] == "object" && passedSettings[setting] !== null && 
+			    !Array.isArray(passedSettings[setting]) && !(passedSettings[setting] instanceof Element) &&
+			    typeof passedSettings[setting].id == "undefined"){
+			// recurse for objects that are not elements and not arrays
+			// if array with objects... will pass reference to whole array
+			// if has id property - can be $ms. object - pass whole object
+			thisSettings[setting] = cloneSettings(thisSettings[setting], passedSettings[setting]);
+		    } else {
+			thisSettings[setting] = passedSettings[setting];
+		    }
 		}
 	    }
 	}
@@ -1899,7 +1908,13 @@ $ms = $msRoot.common = function () {
 	}
 	for (var i = 0; i < options.length; i++){
 	    var option = document.createElement("option");
-	    if (typeof options[i].value == "undefined") {
+	    // value of option can be passed as a string or as part of an object
+	    // if the value property is not defined, will look to "label", then "text"
+	    if (typeof options[i] == "string"){
+		var value = options[i];
+		options[i] = {};
+		options[i].value = options[i];
+	    } else if (typeof options[i].value == "undefined") {
 		if (typeof options[i].label !== "undefined") {
 		    options[i].value = options[i].label;
 		} else if (typeof options[i].text !== "undefined") {

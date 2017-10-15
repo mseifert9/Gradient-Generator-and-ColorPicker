@@ -1,4 +1,4 @@
-/* Copyright © 2017 Michael Seifert (www.mseifert.com) All Rights Reserved */
+/* Copyright © 2017 Michael Seifert (mseifert.com) All Rights Reserved */
 
 // Hue is a degree on the color wheel (from 0 to 360) - 0 (or 360) is red, 120 is green, 240 is blue. 
 // Saturation is a percentage value; 0% is a shade of gray and 100% is the full color. 
